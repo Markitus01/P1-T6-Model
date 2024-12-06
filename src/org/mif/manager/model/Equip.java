@@ -15,7 +15,7 @@ public class Equip
     private int id;
     private String nom;
     private String tipus;
-    private String categoria;
+    private Categoria categoria;
     private LocalDate temporada;
 
     public Equip(){}
@@ -60,14 +60,14 @@ public class Equip
         this.tipus = tipus;
     }
 
-    public String getCategoria()
+    public Categoria getCategoria()
     {
         return categoria;
     }
 
-    public void setCategoria(String categoria)
+    public void setCategoria(Categoria categoria)
     {
-        if (categoria == null || categoria.isEmpty())
+        if (categoria == null)
         {
             throw new RuntimeException("Categoria és obligatoria");
         }
@@ -116,7 +116,7 @@ public class Equip
 
     @Override
     public String toString() {
-        return "Equip{Nom=" + nom + ", Tipus=" + tipus + ", Categoria=" + categoria + ", Temporada=" + temporada + '}';
+        return "Equip{Nom=" + nom + ", Tipus=" + tipus + ", Categoria=" + categoria.getNom() + ", Temporada=" + temporada + '}';
     }
     
     

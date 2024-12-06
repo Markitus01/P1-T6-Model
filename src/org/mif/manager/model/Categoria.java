@@ -65,7 +65,7 @@ public class Categoria
 
     public void setEdat_max(Integer edat_max)
     {
-        if (edat_max == null || edat_max == 0 || edat_max > 99)
+        if (edat_max == 0 || edat_max > 99)
         {
             throw new RuntimeException("Edat màxima no pot ser 0 ni tampoc més gran de 99");
         }
@@ -95,12 +95,8 @@ public class Categoria
         return this.id == other.id;
     }
 
-    
-
     @Override
     public String toString() {
         return "Categoria{" + "Nom=" + nom + ", Edat mínima=" + edat_min + ", Edat màxima=" + edat_max + '}';
     }
-    
-    
 }
