@@ -204,9 +204,9 @@ public class Jugador
         int catEdatMin = equip.getCategoria().getEdat_min();
         int catEdatMax = equip.getCategoria().getEdat_max();
         
-        if (equip == null || catEdatMin > edat_jug || catEdatMax < edat_jug)
+        if (catEdatMin > edat_jug || catEdatMax < edat_jug)
         {
-            throw new RuntimeException("L'equip no pot ser null i l'edat del jugador ha d'estar dins el rang de la categoria de l'equip.");
+            throw new RuntimeException("L'edat del jugador ha d'estar dins el rang de la categoria de l'equip.");
         }
         
         this.equip = equip;
@@ -219,7 +219,7 @@ public class Jugador
 
     public void setTitular(String titular)
     {
-        if (titular == null && (!titular.contains("Convidat") || !titular.contains("Titular")))
+        if (!titular.contains("Convidat") && !titular.contains("Titular"))
         {
             throw new RuntimeException("Tipus de titularitat obligatoria, entre Titular o Convidat.");
         }
