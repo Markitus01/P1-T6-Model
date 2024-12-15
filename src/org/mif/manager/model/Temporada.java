@@ -5,6 +5,7 @@
 package org.mif.manager.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 /**
@@ -60,7 +61,8 @@ public class Temporada
     }
     
     @Override
-    public String toString() {
-        return "Temporada{" + "Any=" + anny + '}';
+    public String toString()
+    {
+        return "Temporada <" + anny.format(DateTimeFormatter.ofPattern("yyyy")) + ">";
     }
 }

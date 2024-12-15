@@ -115,9 +115,8 @@ public class Equip
     
 
     @Override
-    public String toString() {
-        return "Equip{Nom=" + nom + ", Tipus=" + tipus + ", Categoria=" + categoria.getNom() + ", Temporada=" + temporada + '}';
+    public String toString()
+    {
+        return nom;
     }
-    
-    
 }
