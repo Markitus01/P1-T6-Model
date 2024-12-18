@@ -120,9 +120,9 @@ public class Jugador
         boolean nifValid = nifMtx.find();
         boolean nieValid = nieMtx.find();
         
-        if (idLegal == null || (!nifValid && !nieValid))
+        if (idLegal == null || !(nifValid || nieValid))
         {
-            throw new RuntimeException("Identificació legal es obligatoria amb format correcte, ex: '12345678A'.");
+            throw new RuntimeException("Identificació legal es obligatoria amb format correcte.");
         }
         
         this.idLegal = idLegal;
@@ -251,8 +251,6 @@ public class Jugador
 
     @Override
     public String toString() {
-        return "Jugador{" + "nom=" + nom + ",\ncognoms=" + cognoms + ",\nsexe=" + sexe + ",\ndata_naix=" + data_naix + 
-               ",\nidLegal=" + idLegal + ",\niban=" + iban + ",\nany_fi_revi_medica=" + any_fi_revi_medica + 
-               ",\nadresa=" + adresa + ",\nfoto=" + foto + "\nEquip: " + getEquip().getNom() + '}';
+        return nom +" "+ cognoms;
     }
 }
